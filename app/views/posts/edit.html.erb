@@ -1,0 +1,29 @@
+<%# <h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p> %>
+
+<% if flash[:message] %>
+  <h3 style="color: red"><%= flash[:message]%></h3>
+<% end %>
+
+<h1>Post Update Form</h1>
+
+<%= form_for @post do |f| %>
+    
+    <label>Name:</label><br>
+    <%= f.text_field :title %><br>
+
+    <label>Bio:</label><br>
+    <%= f.text_area :content %><br>
+
+    <label>Likes:</label><br>
+    <%= f.number_field :likes %><br>
+
+    <label>Destination:</label><br>
+    <%= f.collection_select :destination_id, Destination.all, :id, :name%><br>
+
+    <label>Blogger:</label><br>
+    <%= f.collection_select :blogger_id, Blogger.all, :id, :name%><br>
+
+    <%= f.submit "Update Post" %>
+
+<% end %>

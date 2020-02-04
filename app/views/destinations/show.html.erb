@@ -1,0 +1,15 @@
+<%# <h1>Destinations#show</h1>
+<p>Find me in app/views/destinations/show.html.erb</p> %>
+
+<h1><%= @destination.name %></h1>
+<h3><%= @destination.country %></h3>
+<% @most_recent.each do |post| %>
+    <h3><%= post.title %></h3>
+
+ <% end %>
+
+<h1>Featured Post</h1>
+ <h1><%= link_to @most_likes.title, post_path(@most_likes)%></h1>
+
+ <h1>Avg Age of Blogger</h1>
+ <h1><%= @avg_age %></h1>

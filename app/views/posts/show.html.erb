@@ -1,0 +1,15 @@
+<%# <h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p> %>
+
+<% if flash[:message] %>
+  <h3 style="color: green"><%= flash[:message]%></h3>
+<% end %>
+
+<h1><%= @post.title %></h1>
+
+<h1><%= @post.content %></h1>
+
+<%= link_to @post.blogger.name, blogger_path(@post.blogger.id)%><br>
+<%= link_to @post.destination.name, destination_path(@post.destination.id)%>
+
+<%= button_to "LIKE IT", increase_likes_path(@post) %>

@@ -1,0 +1,23 @@
+<%# <h1>Bloggers#new</h1>
+<p>Find me in app/views/bloggers/new.html.erb</p> %>
+
+<% if flash[:message] %>
+  <h3 style="color: red"><%= flash[:message]%></h3>
+<% end %>
+
+
+<h1>Blogger Create Form</h1>
+
+<%= form_for @blogger do |f| %>
+    
+    <label>Name:</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>Bio:</label><br>
+    <%= f.text_area :bio %><br>
+
+    <label>Age:</label><br>
+    <%= f.number_field :age %><br>
+    <%= f.submit "Create Blogger" %>
+
+<% end %>
